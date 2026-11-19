@@ -1,0 +1,10 @@
+# Conectores reais (opcionais) - instale apenas os provedores que for conectar
+boto3==1.35.76
+azure-identity==1.19.0
+azure-mgmt-costmanagement==4.0.1
+azure-mgmt-advisor==9.0.0
+oci==2.139.0
+google-cloud-bigquery==3.27.0
+google-cloud-recommender==2.17.0
+huaweicloudsdkbss==3.1.124
+huaweicloudsdkcore==3.1.124
