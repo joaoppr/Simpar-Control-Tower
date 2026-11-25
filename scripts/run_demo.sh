@@ -11,7 +11,7 @@ if [ "$(.venv/bin/python -c "from app.db import scalar; print(scalar(\"select to
   .venv/bin/python -m app.seed
 fi
 cd "$ROOT/frontend"
-[ -d node_modules ] || npm install
+[ -x node_modules/.bin/vite ] || npm install
 [ -d dist ] || npm run build
 cd "$ROOT/backend"
 echo "Abra http://localhost:8888"

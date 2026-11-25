@@ -14,3 +14,7 @@ Veja `docs/RUN.md` para o passo a passo completo (WSL, Windows nativo, Docker, O
 
 ## Documentação
 `docs/ARCHITECTURE.md` · `docs/DATA_MODEL.md` · `docs/WIREFRAMES.md` · `docs/UX_UI.md` · `docs/ROADMAP.md` · `docs/RUN.md` · SQL em `database/`.
+
+## Publicacao
+Veja `docs/DEPLOYMENT.md` para publicar a demonstracao em `/cases/simpar`,
+incluindo as configuracoes de subcaminho, backend e protecao de acesso.

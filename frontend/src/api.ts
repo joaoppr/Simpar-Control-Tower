@@ -1,7 +1,10 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 
+const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 export async function api<T = any>(url: string, init?: RequestInit): Promise<T> {
-  const r = await fetch(url, { headers: { 'Content-Type': 'application/json' }, ...init })
+  const apiUrl = url.startsWith('/api/') ? `${BASE_PATH}${url}` : url
+  const r = await fetch(apiUrl, { headers: { 'Content-Type': 'application/json' }, ...init })
   if (!r.ok) {
     let msg = r.statusText
     try { msg = (await r.json()).detail || msg } catch { /* ignore */ }

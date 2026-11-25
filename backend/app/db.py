@@ -2,7 +2,13 @@ from typing import Any
 from sqlalchemy import create_engine, text
 from .config import settings
 
-engine = create_engine(settings.database_url, pool_pre_ping=True, pool_size=8, max_overflow=8, future=True)
+database_url = settings.database_url
+if database_url.startswith("postgres://"):
+    database_url = database_url.replace("postgres://", "postgresql+psycopg://", 1)
+elif database_url.startswith("postgresql://"):
+    database_url = database_url.replace("postgresql://", "postgresql+psycopg://", 1)
+
+engine = create_engine(database_url, pool_pre_ping=True, pool_size=8, max_overflow=8, future=True)
 
 
 def q(sql: str, **params: Any) -> list[dict]:
